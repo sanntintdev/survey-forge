@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: survey-forge-api
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      APP_PORT: ${APP_PORT}
+
+      MONGODB_URI: ${MONGODB_URI}
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    command: bun --watch src/app.js
+
+    
