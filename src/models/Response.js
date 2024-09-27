@@ -1,13 +1,13 @@
-import mongoose from "mongoose";
+import { Schema, model } from 'mongoose';
 
-const ResponseSchema = new mongoose.Schema({
+const ResponseSchema = new Schema({
     surveyId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Survey',
         required: true
     },
     respondentId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
     },
     answers: [answerSchema],
@@ -17,5 +17,5 @@ const ResponseSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const Response = mongoose.model('Response', ResponseSchema);
+const Response = model('Response', ResponseSchema);
 export default Response;

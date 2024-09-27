@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import { Schema, model } from 'mongoose';
 
-const QuestionSchema = new mongoose.Schema({
+const QuestionSchema = new Schema({
     type: {
         type: String,
         required: true,
@@ -21,5 +21,5 @@ const QuestionSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const Question = mongoose.model('Question', QuestionSchema);
+const Question = model('Question', QuestionSchema);
 export default Question;

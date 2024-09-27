@@ -1,13 +1,13 @@
-import mongoose from "mongoose";
+import { Schema, model } from 'mongoose';
 
-const surveyInvitationSchema = new mongoose.Schema({
+const surveyInvitationSchema = new Schema({
     surveyId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Survey',
         required: true
     },
     recipientId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
     },
     email: {
@@ -31,5 +31,5 @@ const surveyInvitationSchema = new mongoose.Schema({
     completedAt: Date
 });
 
-const SurveyInvitation = mongoose.model('SurveyInvitation', surveyInvitationSchema);
+const SurveyInvitation = model('SurveyInvitation', surveyInvitationSchema);
 export default SurveyInvitation;

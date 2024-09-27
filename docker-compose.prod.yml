@@ -10,10 +10,11 @@ services:
     environment:
       NODE_ENV: ${NODE_ENV}
       APP_PORT: ${APP_PORT}
-
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
       MONGODB_URI: ${MONGODB_URI}
     ports:
       - "${APP_PORT}:${APP_PORT}"
-    command: bun src/app.js
+    command: bun start
 
     
