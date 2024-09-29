@@ -1,12 +1,12 @@
-import mongoose from "mongoose";
+import { Schema, model } from 'mongoose';
 
-const AnswerSchema = new mongoose.Schema({
+const AnswerSchema = new Schema({
     questionId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         required: true
     },
-    answer: mongoose.Schema.Types.Mixed
+    answer: Schema.Types.Mixed
 }, { timestamps: true });
 
-const Answer = mongoose.model('Answer', AnswerSchema);
+const Answer = model('Answer', AnswerSchema);
 export default Answer;

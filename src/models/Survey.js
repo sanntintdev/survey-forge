@@ -1,13 +1,13 @@
-import mongoose from "mongoose";
+import { Schema, model } from 'mongoose';
 
-const SurveySchema = new mongoose.Schema({
+const SurveySchema = new Schema({
     title: {
         type: String,
         required: true
     },
     description: String,
     creatorId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
@@ -22,5 +22,5 @@ const SurveySchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
-const Survey = mongoose.model('Survey', SurveySchema);
+const Survey = model('Survey', SurveySchema);
 export default Survey;
